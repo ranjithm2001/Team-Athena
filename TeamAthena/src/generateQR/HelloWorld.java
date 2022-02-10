@@ -1,4 +1,4 @@
-package com.TeamAthena.QR;
+package generateQR;
 
 public class HelloWorld {
 
