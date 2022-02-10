@@ -1,5 +1,4 @@
-# 
-    Team Athena
+# Team Athena
 
 * M Ranjith    		: AM.EN.U4CSE19331 (Scrum Master)
 * Adharsh S Mathew 	: AM.EN.U4CSE19302
