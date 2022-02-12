@@ -33,7 +33,6 @@ This is a Java Project that allows users to Register an account and generate a Q
       * https://drive.google.com/file/d/1bDAPKJnq6mYDTJZiOw8iKljOXTDtr9ET/view?usp=sharing
     * User Stories pending
     * ER diagram pending
-    * 
 * Week 2
 * Week 3
 * Week 4
