@@ -25,6 +25,15 @@ This is a Java Project that allows users to Register an account and generate a Q
 ## Time-Line
 
 * Week 1
+  * Meeting 1 : 9/2/2022 : Mode = Discord
+    * Work Divison Completed
+    * Github Repository Completed
+  * Meeting 2 : 12/2/2022 : Mode = Discord
+    * Usecase Diagram using diagrams.net
+      * https://drive.google.com/file/d/1bDAPKJnq6mYDTJZiOw8iKljOXTDtr9ET/view?usp=sharing
+    * User Stories pending
+    * ER diagram pending
+    * 
 * Week 2
 * Week 3
 * Week 4
