@@ -13,7 +13,7 @@ This is a Java Project that allows users to Register an account and generate a Q
 
 * Conventional login system uses username and password to login to the system. This is time consuming.
 * Biometric login system, during current covid times  biometric system that mainly focus on fingerprint authentication systems is a source point for contact.
-* QR based login system uses a generation system to generate QR based on teh details and a Reader system to read the QR code and do authentication of the user.
+* QR based login system uses a generation system to generate QR based on the details and a Reader system to read the QR code and do authentication of the user.
 
 # Tech Stack
 
