@@ -31,8 +31,8 @@ This is a Java Project that allows users to Register an account and generate a Q
   * Meeting 2 : 12/2/2022 : Mode = Discord
     * Usecase Diagram using diagrams.net
       * https://drive.google.com/file/d/1bDAPKJnq6mYDTJZiOw8iKljOXTDtr9ET/view?usp=sharing
-    * User Stories pending
-    * ER diagram pending
+    * User Stories Completed
+    * ER diagram Completed
 * Week 2
 * Week 3
 * Week 4
