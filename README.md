@@ -34,5 +34,7 @@ This is a Java Project that allows users to Register an account and generate a Q
     * User Stories Completed
     * ER diagram Completed
 * Week 2
+  * Backlogs
+    * Class Diagram : Pending
 * Week 3
 * Week 4
