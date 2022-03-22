@@ -31,10 +31,23 @@ This is a Java Project that allows users to Register an account and generate a Q
   * Meeting 2 : 12/2/2022 : Mode = Discord
     * Usecase Diagram using diagrams.net
       * https://drive.google.com/file/d/1bDAPKJnq6mYDTJZiOw8iKljOXTDtr9ET/view?usp=sharing
+      * ![img](image/README/1647958060166.png)
     * User Stories Completed
     * ER diagram Completed
+      * ![img](image/README/1647958070601.png)
 * Week 2
+  * Meeting 1 : 16/3/2022 : Mode - Teams
+
+    * Meeting Minutes
   * Backlogs
-    * Class Diagram : Pending
+  * | Team Member | Forcast                        | To Do | Progress | Done |
+    | ----------- | ------------------------------ | ----- | -------- | ---- |
+    | Ranjith     | Initial Class Diagram          |       |          | *    |
+    | Karthik     | Code for initial Class Diagram |       | *        |      |
+    | Gokul       | Modified Class Diagram         | *     |          |      |
+    | Adharsh     | Modified Code                  | *     |          |      |
+
+    Class Diagram v1:
+  * ![img](image/README/1647958125168.png)
 * Week 3
 * Week 4
