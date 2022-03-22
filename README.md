@@ -36,9 +36,20 @@ This is a Java Project that allows users to Register an account and generate a Q
     * ER diagram Completed
       * ![img](image/README/1647958070601.png)
 * Week 2
-  * Meeting 1 : 16/3/2022 : Mode - Teams
+  * Meeting 3 : 8/3/2022 : Mode - Face to Face
 
-    * Meeting Minutes
+    * Disscussion regarding the class diagram is done.
+    * Source code to be generated.
+    * Necessary refactoring to be done.
+  * Meeting 4 : 15 /3/2022: Mode - Face to Face
+
+    * Initial Class Diagram is done.
+      * Class Diagram v1:
+
+        ![](image/README/1647962373443.png)
+    * Source Code is being generated.
+      * Path to Source Code
+    * Necessary refactoring is pending.
   * Backlogs
   * | Team Member | Forcast                        | To Do | Progress | Done |
     | ----------- | ------------------------------ | ----- | -------- | ---- |
@@ -46,8 +57,18 @@ This is a Java Project that allows users to Register an account and generate a Q
     | Karthik     | Code for initial Class Diagram |       | *        |      |
     | Gokul       | Modified Class Diagram         | *     |          |      |
     | Adharsh     | Modified Code                  | *     |          |      |
-
-    Class Diagram v1:
-  * ![img](image/README/1647958125168.png)
 * Week 3
+  * Meeting 5 : 22/3/2022 : Mode - Face to Face
+    * Initial Class Diagram Done
+    * Source code has been generated
+    * Making necessary changes to the class diagrams
+
+      * Backlogs
+
+      | Team Member | Forcast                        | To Do | Progress | Done |
+      | ----------- | ------------------------------ | ----- | -------- | ---- |
+      | Ranjith     | Initial Class Diagram          |       |          | *    |
+      | Karthik     | Code for initial Class Diagram |       |          | *    |
+      | Gokul       | Modified Class Diagram         |       | *        |      |
+      | Adharsh     | Modified Code                  |       | *        |      |
 * Week 4
