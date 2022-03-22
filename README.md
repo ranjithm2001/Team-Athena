@@ -35,6 +35,7 @@ This is a Java Project that allows users to Register an account and generate a Q
     * User Stories Completed
     * ER diagram Completed
       * ![img](image/README/1647958070601.png)
+    * Status = Completed
 * Week 2
   * Meeting 3 : 8/3/2022 : Mode - Face to Face
 
@@ -50,7 +51,7 @@ This is a Java Project that allows users to Register an account and generate a Q
     * Source Code is being generated.
       * Path to Source Code
       * ![img](image/README/1647967056397.png)
-      * ![](image/README/1647967266024.png)
+      * ![img](image/README/1647967266024.png)
     * Necessary refactoring is pending.
   * Backlogs
   * | Team Member | Forcast                        | To Do | Progress | Done |
@@ -59,6 +60,8 @@ This is a Java Project that allows users to Register an account and generate a Q
     | Karthik     | Code for initial Class Diagram |       | *        |      |
     | Gokul       | Modified Class Diagram         | *     |          |      |
     | Adharsh     | Modified Code                  | *     |          |      |
+
+    Status = Completed
 * Week 3
   * Meeting 5 : 22/3/2022 : Mode - Face to Face
     * Initial Class Diagram Done
@@ -73,4 +76,6 @@ This is a Java Project that allows users to Register an account and generate a Q
       | Karthik     | Code for initial Class Diagram |       |          | *    |
       | Gokul       | Modified Class Diagram         |       | *        |      |
       | Adharsh     | Modified Code                  |       | *        |      |
+
+      Status = Pending
 * Week 4
