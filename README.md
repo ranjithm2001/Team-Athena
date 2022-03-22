@@ -46,9 +46,10 @@ This is a Java Project that allows users to Register an account and generate a Q
     * Initial Class Diagram is done.
       * Class Diagram v1:
 
-        ![](image/README/1647962373443.png)
+        ![img](image/README/1647962373443.png)
     * Source Code is being generated.
       * Path to Source Code
+      * ![](image/README/1647967056397.png)
     * Necessary refactoring is pending.
   * Backlogs
   * | Team Member | Forcast                        | To Do | Progress | Done |
