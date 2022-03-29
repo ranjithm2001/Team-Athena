@@ -4,32 +4,34 @@ import java.util.*;
 /**
  * 
  */
-public class Details {
+public class Menu {
 
     /**
      * Default constructor
      */
-    public Details() {
+    public Menu() {
     }
 
     /**
      * 
      */
-    public String Name;
+    protected int id;
 
     /**
      * 
      */
-    public String Dob;
+    public string details;
 
     /**
      * 
      */
-    public String Email;
+    public string list;
 
     /**
      * 
      */
-    public long Phone;
+    public void update() {
+        // TODO implement here
+    }
 
 }

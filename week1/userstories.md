@@ -1,7 +1,13 @@
 # User Stories
 
-* User must be able to register the userdetails like name, email, username, passoword.
-* Using the above included details, the user must be able to generate a QR code that can store details for login later.
-* Admin must authenticate a user when they register themselfs.
-* User must be able to update personal details and regenrate QR later.
-* User must be able to stay signed in unitl the user decided to logout.
+* User must be able to create an account and login using the account in the future.
+* User must be able to book a table online or select a table when he visits the resturant.
+* User must be able to view the menu avaliable at the resturant.
+* User must be able to order food either online or at the resturant.
+* User must be able to make the paymrnt either by cash or by card.
+* User must be able to leave feedback on the resturant.
+* There must be a manager that does the administerative roles of managing the resturant.
+* The manager must be able to view the revenue, manage the staff etc.
+* There must be a chef who can create the menu and assign the price.
+* There must be a recptionist whe can be contacted by a user to book tables.
+* There must be a waiter who can deliver the order.

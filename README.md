@@ -5,15 +5,9 @@
 * Karthik Narayanan 	: AM.EN.U4CSE19327
 * Gokul Krishnan G	: AM.EN.U4CSE19321
 
-### QR Code Based Login System
+##### Resturant Management System
 
-This is a Java Project that allows users to Register an account and generate a QR code. This QR Code can be later used to login into the system.
-
-##### Motivation
-
-* Conventional login system uses username and password to login to the system. This is time consuming.
-* Biometric login system, during current covid times  biometric system that mainly focus on fingerprint authentication systems is a source point for contact.
-* QR based login system uses a generation system to generate QR based on the details and a Reader system to read the QR code and do authentication of the user.
+    The Restruant management system is a GUI based system that can be used  to monitor annd manage the customers information and status. It needs to manage the food information and new items to the menu. It must allow customers to book online as well as dine in. It must keep track on the revenue and expenses and also track the transactions.
 
 # Tech Stack
 
@@ -30,11 +24,9 @@ This is a Java Project that allows users to Register an account and generate a Q
     * Github Repository Completed
   * Meeting 2 : 12/2/2022 : Mode = Discord
     * Usecase Diagram using diagrams.net
-      * https://drive.google.com/file/d/1bDAPKJnq6mYDTJZiOw8iKljOXTDtr9ET/view?usp=sharing
-      * ![img](image/README/1647958060166.png)
+      * ![img](image/README/1648574281754.png)
     * User Stories Completed
     * ER diagram Completed
-      * ![img](image/README/1647958070601.png)
     * Status = Completed
 * Week 2
   * Meeting 3 : 8/3/2022 : Mode - Face to Face
@@ -46,12 +38,10 @@ This is a Java Project that allows users to Register an account and generate a Q
 
     * Initial Class Diagram is done.
       * Class Diagram v1:
-
-        ![img](image/README/1647962373443.png)
+      * ![img](image/README/1648575188393.png)
     * Source Code is being generated.
       * Path to Source Code
       * ![img](image/README/1647967056397.png)
-      * ![img](image/README/1647967266024.png)
     * Necessary refactoring is pending.
   * Backlogs
   * | Team Member | Forcast                        | To Do | Progress | Done |
@@ -78,4 +68,5 @@ This is a Java Project that allows users to Register an account and generate a Q
       | Adharsh     | Modified Code                  |       | *        |      |
 
       Status = Pending
+  * Meeting 6 : 28/ 3/2022 : Mode - Face to Face
 * Week 4
