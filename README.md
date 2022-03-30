@@ -7,7 +7,7 @@
 
 ##### Resturant Management System
 
-    The Restruant management system is a GUI based system that can be used  to monitor annd manage the customers information and status. It needs to manage the food information and new items to the menu. It must allow customers to book online as well as dine in. It must keep track on the revenue and expenses and also track the transactions.
+<p>The Restruant management system is a GUI based system that can be used  to monitor annd manage the customers information and status. It needs to manage the food information and new items to the menu. It must allow customers to book online as well as dine in. It must keep track on the revenue and expenses and also track the transactions.</p>
 
 # Tech Stack
 
