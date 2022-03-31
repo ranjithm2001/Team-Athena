@@ -24,7 +24,7 @@
     * Github Repository Completed
   * Meeting 2 : 12/2/2022 : Mode = Discord
     * Usecase Diagram using diagrams.net
-      * ![img](image/README/1648574281754.png)
+      * ![img](week1/UseCase.png)
     * User Stories Completed
     * ER diagram Completed
     * Status = Completed
