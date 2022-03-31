@@ -24,7 +24,7 @@
     * Github Repository Completed
   * Meeting 2 : 12/2/2022 : Mode = Discord
     * Usecase Diagram using diagrams.net
-    ![img](week1/UseCase.png)
+      ![img](week1/UseCase.png)
     * User Stories Completed
     * ER diagram Completed
     * Status = Completed
@@ -61,9 +61,9 @@
     * Source code has been generated
     * Making necessary changes to the class diagrams
     * Modified class diagram complete.
-      * Class Diagram v2:
-      ![img](week3/class_diagram.png)
 
+      * Class Diagram v2:
+        ![img](week3/class_diagram.png)
       * Backlogs
 
       | Team Member | Forcast                        | To Do | Progress | Done |
@@ -79,7 +79,6 @@
     * Initial Class Diagram done
     * Initial Source Code Done
     * New class diagram Done
-      * ![img](image/README/1648714504877.png)
     * New source code generated
     * Backlogs
 
@@ -92,7 +91,6 @@
 * Week 4
 
   * Meeting 7  : 31/3/2022  Mode - Face to Face
-  * 
 
   | Team Member | Forcast     | To Do | Progress | Done |
   | ----------- | ----------- | ----- | -------- | ---- |
