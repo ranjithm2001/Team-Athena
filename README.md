@@ -24,7 +24,7 @@
     * Github Repository Completed
   * Meeting 2 : 12/2/2022 : Mode = Discord
     * Usecase Diagram using diagrams.net
-      * ![img](week1/UseCase.png)
+    ![img](week1/UseCase.png)
     * User Stories Completed
     * ER diagram Completed
     * Status = Completed
@@ -57,6 +57,9 @@
     * Initial Class Diagram Done
     * Source code has been generated
     * Making necessary changes to the class diagrams
+    * Modified class diagram complete.
+      * Class Diagram v2:
+      ![img](week3/class_diagram.png)
 
       * Backlogs
 
@@ -64,7 +67,7 @@
       | ----------- | ------------------------------ | ----- | -------- | ---- |
       | Ranjith     | Initial Class Diagram          |       |          | *    |
       | Karthik     | Code for initial Class Diagram |       |          | *    |
-      | Gokul       | Modified Class Diagram         |       | *        |      |
+      | Gokul       | Modified Class Diagram         |       |          | *    |
       | Adharsh     | Modified Code                  |       | *        |      |
 
       Status = Pending
