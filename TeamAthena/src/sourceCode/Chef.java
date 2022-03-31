@@ -4,35 +4,25 @@ import java.util.*;
 /**
  * 
  */
-public class Menu {
+public class Chef extends Employee {
 
     /**
      * Default constructor
      */
-    public Menu() {
+    public Chef() {
     }
 
     /**
      * 
      */
-    public string item;
-
-    /**
-     * 
-     */
-    public string type;
-
-    /**
-     * 
-     */
-    public void add_items() {
+    public void confirm_order() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void remove_items() {
+    public void dispatch() {
         // TODO implement here
     }
 

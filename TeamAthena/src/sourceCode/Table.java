@@ -4,50 +4,47 @@ import java.util.*;
 /**
  * 
  */
-public class Order {
+public class Table {
 
     /**
      * Default constructor
      */
-    public Order() {
+    public Table() {
     }
 
     /**
      * 
      */
-    protected string order_id;
+    public int table_number;
 
     /**
      * 
      */
-    protected string mode;
+    public int table_capacity;
 
     /**
      * 
      */
-    public string items;
+    public bool occupied;
 
     /**
      * 
      */
-    public float serving;
-
-    /**
-     * 
-     */
-    public float amount;
-
-    /**
-     * 
-     */
-    public void place_order() {
+    public void receive_order() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void cancel_order() {
+    public void receiver_feedback() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void alert_staff() {
         // TODO implement here
     }
 

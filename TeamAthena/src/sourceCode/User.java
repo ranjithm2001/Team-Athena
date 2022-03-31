@@ -4,50 +4,55 @@ import java.util.*;
 /**
  * 
  */
-public class Order {
+public class User {
 
     /**
      * Default constructor
      */
-    public Order() {
+    public User() {
     }
 
     /**
      * 
      */
-    protected string order_id;
+    public string username;
 
     /**
      * 
      */
-    protected string mode;
+    protected string password;
 
     /**
      * 
      */
-    public string items;
+    public string name;
 
     /**
      * 
      */
-    public float serving;
+    protected int phone;
 
     /**
      * 
      */
-    public float amount;
+    protected string address;
 
     /**
      * 
      */
-    public void place_order() {
+    protected string email;
+
+    /**
+     * 
+     */
+    public void login() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void cancel_order() {
+    public void update_profile() {
         // TODO implement here
     }
 

@@ -4,35 +4,25 @@ import java.util.*;
 /**
  * 
  */
-public class Menu {
+public class Receptionist extends Employee {
 
     /**
      * Default constructor
      */
-    public Menu() {
+    public Receptionist() {
     }
 
     /**
      * 
      */
-    public string item;
-
-    /**
-     * 
-     */
-    public string type;
-
-    /**
-     * 
-     */
-    public void add_items() {
+    public void assign_tables() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void remove_items() {
+    public void view_transactions() {
         // TODO implement here
     }
 

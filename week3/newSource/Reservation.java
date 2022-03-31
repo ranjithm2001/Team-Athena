@@ -4,50 +4,52 @@ import java.util.*;
 /**
  * 
  */
-public class Order {
+public class Reservation {
 
     /**
      * Default constructor
      */
-    public Order() {
+    public Reservation() {
     }
 
     /**
      * 
      */
-    protected string order_id;
+    protected string reservation_id;
 
     /**
      * 
      */
-    protected string mode;
+    public int table_number;
 
     /**
      * 
      */
-    public string items;
+    public string date;
 
     /**
      * 
      */
-    public float serving;
+    public string time;
 
     /**
      * 
      */
-    public float amount;
-
-    /**
-     * 
-     */
-    public void place_order() {
+    public void assign_table() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void cancel_order() {
+    public void make_reservation() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void cancel_reservation() {
         // TODO implement here
     }
 

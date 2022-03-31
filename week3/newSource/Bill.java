@@ -4,40 +4,43 @@ import java.util.*;
 /**
  * 
  */
-public class Payment {
+public class Bill {
 
     /**
      * Default constructor
      */
-    public Payment() {
+    public Bill() {
     }
 
     /**
      * 
      */
-    public int id;
+    public string bill_id;
 
     /**
      * 
      */
-    public int credit_card;
+    public string items;
 
     /**
      * 
      */
-    public string amount;
+    public float price;
 
     /**
      * 
      */
-    public void add() {
-        // TODO implement here
-    }
+    public float amount;
 
     /**
      * 
      */
-    public void update() {
+    public string payment_type;
+
+    /**
+     * 
+     */
+    public void process_payment() {
         // TODO implement here
     }
 

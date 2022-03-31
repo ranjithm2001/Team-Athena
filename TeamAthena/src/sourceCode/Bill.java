@@ -4,23 +4,18 @@ import java.util.*;
 /**
  * 
  */
-public class Order {
+public class Bill {
 
     /**
      * Default constructor
      */
-    public Order() {
+    public Bill() {
     }
 
     /**
      * 
      */
-    protected string order_id;
-
-    /**
-     * 
-     */
-    protected string mode;
+    public string bill_id;
 
     /**
      * 
@@ -30,7 +25,7 @@ public class Order {
     /**
      * 
      */
-    public float serving;
+    public float price;
 
     /**
      * 
@@ -40,14 +35,12 @@ public class Order {
     /**
      * 
      */
-    public void place_order() {
-        // TODO implement here
-    }
+    public string payment_type;
 
     /**
      * 
      */
-    public void cancel_order() {
+    public void process_payment() {
         // TODO implement here
     }
 

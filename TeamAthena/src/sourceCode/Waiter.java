@@ -4,35 +4,25 @@ import java.util.*;
 /**
  * 
  */
-public class Menu {
+public class Waiter extends Employee {
 
     /**
      * Default constructor
      */
-    public Menu() {
+    public Waiter() {
     }
 
     /**
      * 
      */
-    public string item;
-
-    /**
-     * 
-     */
-    public string type;
-
-    /**
-     * 
-     */
-    public void add_items() {
+    private void deliver_order() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void remove_items() {
+    private void receive_notification() {
         // TODO implement here
     }
 

@@ -4,38 +4,35 @@ import java.util.*;
 /**
  * 
  */
-public class Delivery {
+public class Menu {
 
     /**
      * Default constructor
      */
-    public Delivery() {
+    public Menu() {
     }
 
     /**
      * 
      */
-    protected int id;
+    public string item;
 
     /**
      * 
      */
-    public string name;
+    public string type;
 
     /**
      * 
      */
-    public string date;
+    public void add_items() {
+        // TODO implement here
+    }
 
     /**
      * 
      */
-    public string address;
-
-    /**
-     * 
-     */
-    public void update() {
+    public void remove_items() {
         // TODO implement here
     }
 
