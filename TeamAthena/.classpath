@@ -6,8 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/adhar/git/Team-Athena/TeamAthena/src/externalJar/core-3.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/adhar/git/Team-Athena/TeamAthena/src/externalJar/javase-3.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/adhar/git/Team-Athena/TeamAthena/src/externalJar/postgresql-42.3.3.jar"/>
+	<classpathentry kind="lib" path="/run/media/gokul/f4b96ffb-3a6d-4ea0-865c-23f5f7cec76e/SE Project/Team-Athena/TeamAthena/lib/javase-3.4.1.jar"/>
+	<classpathentry kind="lib" path="/run/media/gokul/f4b96ffb-3a6d-4ea0-865c-23f5f7cec76e/SE Project/Team-Athena/TeamAthena/lib/core-3.4.1.jar"/>
+	<classpathentry kind="lib" path="/run/media/gokul/f4b96ffb-3a6d-4ea0-865c-23f5f7cec76e/SE Project/Team-Athena/TeamAthena/lib/javax.activation-1.2.0.jar"/>
+	<classpathentry kind="lib" path="/run/media/gokul/f4b96ffb-3a6d-4ea0-865c-23f5f7cec76e/SE Project/Team-Athena/TeamAthena/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="/run/media/gokul/f4b96ffb-3a6d-4ea0-865c-23f5f7cec76e/SE Project/Team-Athena/TeamAthena/lib/opencv-455.jar"/>
+	<classpathentry kind="lib" path="/run/media/gokul/f4b96ffb-3a6d-4ea0-865c-23f5f7cec76e/SE Project/Team-Athena/TeamAthena/lib/sqlite-jdbc-3.36.0.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
