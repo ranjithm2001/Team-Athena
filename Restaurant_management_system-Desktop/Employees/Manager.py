@@ -7,13 +7,13 @@ class Manager:
     def __init__(self, root):
         self.root = root
         self.root.title("Manager Portal")
-        self.root.geometry("1280x720")
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        win_dims = str(screen_width) + "x" + str(screen_height)
+        self.root.geometry(win_dims)
 
-        manager_frame = Frame(self.root, bg="white")
-        manager_frame.place(x=150, y=150, height=380, width=500)
-
-        login_btn = Button(manager_frame, command=self.logout, text="Logout", fg="white",
-                           font=("Calibri", 15, "bold"), bg="black").place(x=200, y=300)
+        logout_btn = Button(self.root, command=self.logout, text="Logout", fg="white",
+                            font=("Calibri", 15, "bold"), bg="black").place(x=1800, y=30)
 
     def logout(self):
         self.root.destroy()

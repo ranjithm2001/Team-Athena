@@ -4,6 +4,12 @@ from Employees import Manager, Reception, Kitchen
 import cv2
 from PIL import ImageTk, Image
 import threading
+import sqlite3
+con = sqlite3.connect('database.db')
+
+# cur = con.cursor()
+# cur.execute('SELECT * FROM employee_data')
+# print(cur.fetchall()[0][0])
 
 
 class Login:
@@ -30,7 +36,7 @@ class Login:
         self.password_text.place(x=190, y=220)
 
         login_btn = Button(login_form, command=self.validate_login, text="Login", fg="white", font=("Calibri", 15, "bold"), bg="black").place(x=200, y=300)
-        # threading.Timer(0.5, self.scan_qr).start()
+        threading.Timer(0.5, self.scan_qr).start()
 
     def scan_qr(self):
         cap = cv2.VideoCapture(0)
