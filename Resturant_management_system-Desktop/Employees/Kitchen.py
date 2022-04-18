@@ -1,6 +1,13 @@
+import threading
 from tkinter import *
 from tkinter import ttk, messagebox
 import Login_window
+import time
+import sqlite3
+con = sqlite3.connect('database.db', check_same_thread=False)
+# orders = con.execute('SELECT * from order_data where status="recieved"')
+# for i in orders:
+#     print(i[0], i[1], i[2], i[3])
 
 
 class Chef:
@@ -41,11 +48,30 @@ class Chef:
 
         orders_frame = Frame(content_frame, bg="white")
         orders_frame.place(x=0, y=70, width=1500, height=500)
-        order_table = ttk.Treeview(orders_frame, columns=("Order ID", "Items", "Order Mode"))
+        global order_table
+        order_table = ttk.Treeview(orders_frame, selectmode='browse')
+        style = ttk.Style()
+        style.configure("Treeview.Heading", font=("Calibri", 15))
+        order_table["columns"] = ("1", "2", "3", "4")
+        order_table["show"] = 'headings'
+        order_table.heading("1", text="OrderID")
+        order_table.heading("2", text="Items")
+        order_table.heading("3", text="Table number")
+        order_table.heading("4", text="Mode")
+
         order_table.place(x=0, y=0, width=1400, height=500)
+        self.refresh_order_list()
+        # x = threading.Timer(1, self.refresh_order_list).start()
+        # self.root.after(1000, self.refresh_order_list())
+
 
     def refresh_order_list(self):
-        pass
+        orders = con.execute('SELECT * from order_data where status="recieved"')
+        for item in order_table.get_children():
+            order_table.delete(item)
+        for i in orders:
+            order_table.insert("", 'end', iid=i[0], text=i[0], values=(i[0], i[1], i[2], i[3]))
+        threading.Timer(15, self.refresh_order_list).start()
 
     def logout(self):
         self.root.destroy()
@@ -56,5 +82,3 @@ def init_kitchen_portal():
     rt = Tk()
     obj = Chef(rt)
     rt.mainloop()
-
-
