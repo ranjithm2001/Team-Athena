@@ -104,7 +104,7 @@ def update_profile(username):
         else:
             print("Wrong Choice")
 
-def 
+# def
 
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
