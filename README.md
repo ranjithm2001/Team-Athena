@@ -12,8 +12,10 @@
 # Tech Stack
 
 * API used:
-  * Java Swings API
-  * JDBC API
+  * Python Tkinter
+  * Psycopg2 
+  * OpenCv
+  * Pillow
 
 ## Time-Line
 
