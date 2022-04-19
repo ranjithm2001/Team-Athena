@@ -34,13 +34,13 @@ class Manager:
                             font=("Calibri", 15, "bold"), bg="light blue").place(x=0, y=350, width=340, height=250)
 
     def __update_user_details(self):
-        #self.view_revenue.destroy()
+        self.view_revenue.place_forget()
         self.update_user.place(x=300, y=80, width=1425, height=884)
         L1 = Label(self.update_user,text= "Update Details",font=('calibri',20,'bold'),bg='black',fg='blue')
         L1.pack(side="top",fill=X)
 
     def __view_revenue(self):
-        #self.update_user.destroy()
+        self.update_user.place_forget()
         self.view_revenue.place(x=300, y=80, width=1425, height=884)
         L1 = Label(self.view_revenue,text= "View Revenue",font=('calibri',20,'bold'),bg='black',fg='blue')
         L1.pack(side="top",fill=X)
