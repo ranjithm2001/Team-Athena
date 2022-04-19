@@ -247,6 +247,13 @@ def create_account(username, password, name, phone, address, email):
         print("Account created successfully")
     else:
         print("Cannot create account as provided username already exists.")
+        
+def order_food(items, table_no, mode, status, amount):
+    cursor = conn.cursor()
+    cursor.execute("insert into order_data values(%s, %s, %s', %s, %s, %s)",
+                   (items, table_no, mode, status, amount))
+    conn.commit()
+    print("Ordered successfully")
     
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
