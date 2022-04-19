@@ -138,5 +138,5 @@ if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
     # log_res = login("cust1", "cust1_pass")
     # update_username("cust1", "new_cust1")
-    receive_order(1)
+    deliver_order(1)
     # print(log_res)
