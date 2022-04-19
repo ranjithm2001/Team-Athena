@@ -224,7 +224,7 @@ def view_revenue():
     revenue = 0
     for i in amount:
         revenue += int(i[0])
-    print(revenue)
+    print("Total revenue obtained: " + revenue)
     conn.commit()
 
 
