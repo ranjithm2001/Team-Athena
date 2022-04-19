@@ -224,18 +224,7 @@ def view_revenue():
     revenue = 0
     for i in amount:
         revenue += int(i[0])
-    print("Total revenue obtained: " + str(revenue))
-    conn.commit()
-
-
-def display_bill_amount(order_id):
-    cursor = conn.cursor()
-    cursor.execute('SELECT amount from order_data where order_id = %s', (order_id,))
-    amount = cursor.fetchall()
-    bill = 0
-    for i in amount:
-        bill += int(i[0])
-    print("Total bill: " + str(bill))
+    print("Total revenue obtained: " + revenue)
     conn.commit()
 
 
@@ -243,5 +232,5 @@ if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
     # log_res = login("cust1", "cust1_pass")
     # update_username("cust1", "new_cust1")
-    display_bill_amount(1)
+    view_revenue()
     # print(log_res)
