@@ -20,19 +20,23 @@ class Chef:
         self.content_frame = Frame(self.root, bg="gray")
         self.content_frame.place(x=360, y=80, width=1555, height=930)
 
-        navigation_frame = Frame(self.root, bd=4, relief=RIDGE, bg="light blue")
+        navigation_frame = Frame(self.root, bd=4, relief=RIDGE, bg="navy blue")
         navigation_frame.place(x=5, y=80, width=350, height=930)
 
-        logout_btn = Button(self.root, command=self.logout, text="Logout", fg="white",
-                            font=("Calibri", 15, "bold"), bg="black").place(x=1800, y=30)
+        logout_btn = Button(self.root, command=self.logout, text="Logout", fg="black",
+                            font=("Calibri", 15, "bold"), bg="white").place(x=1800, y=30)
 
         menu_btn = Button(navigation_frame, command=self.raise_menu, text="Change Menu", fg="black",
-                          font=("Calibri", 25, "bold"), bg="light blue").place(x=0, y=80, width=340, height=250)
+                          font=("Calibri", 25, "bold"), bg="light blue").place(x=0, y=350, width=340, height=250)
 
         orders_button = Button(navigation_frame, command=self.raise_orders, text="View Orders", fg="black",
-                               font=("Calibri", 25, "bold"), bg="light blue").place(x=0, y=350, width=340, height=250)
+                               font=("Calibri", 25, "bold"), bg="light blue").place(x=0, y=80, width=340, height=250)
+
+        new_recipe_button = Button(navigation_frame, command=self.raise_new_dish, text="Add new Dish", fg="black",
+                               font=("Calibri", 25, "bold"), bg="light blue").place(x=0, y=620, width=340, height=250)
 
         self.menu_frame = Frame(self.content_frame, bg="gray")
+        self.new_dish_frame = Frame(self.content_frame, bg='gray')
         self.orders_frame = Frame(self.content_frame, bg="white")
         self.orders_frame.place(x=0, y=70, width=1555, height=500)
 
@@ -48,7 +52,7 @@ class Chef:
         self.order_table.heading("2", text="Items")
         self.order_table.heading("3", text="Table number")
         self.order_table.heading("4", text="Mode")
-        self.order_table.place(x=0, y=0, width=1555, height=500)
+        self.order_table.place(x=0, y=45, width=1555, height=500)
         self.refresh_order_list()
 
         self.dishes_table = ttk.Treeview(self.menu_frame, selectmode='browse')
@@ -104,17 +108,26 @@ class Chef:
             self.order_table.delete(item)
         for i in orders:
             self.order_table.insert("", 'end', iid=i[0], text=i[0], values=(i[0], i[1], i[2], i[3]))
-        threading.Timer(1, self.refresh_order_list).start()
+        self.refresh_order_thread = threading.Timer(1, self.refresh_order_list)
+        self.refresh_order_thread.start()
 
     def raise_menu(self):
         self.orders_frame.place_forget()
+        self.new_dish_frame.place_forget()
         self.menu_frame.place(x=0, y=0, width=1555, height=930)
 
     def raise_orders(self):
         self.menu_frame.place_forget()
+        self.new_dish_frame.place_forget()
         self.orders_frame.place(x=0, y=70, width=1555, height=500)
 
+    def raise_new_dish(self):
+        self.menu_frame.place_forget()
+        self.orders_frame.place_forget()
+        self.new_dish_frame.place(x=0, y=70, width=1555, height=500)
+
     def logout(self):
+        self.refresh_order_thread.cancel()
         self.root.destroy()
         Login_window.init_login()
 
@@ -131,7 +144,7 @@ class Chef:
     def populate_dishes_list(self):
         dishes = con.execute('SELECT * FROM dishes')
         for dish in dishes:
-            self.dishes_table.insert("", 'end', iid=dish[5], text=dish[5], values=(dish[5], dish[0], dish[4]))
+            self.dishes_table.insert("", 'end', iid=dish[4], text=dish[4], values=(dish[4], dish[0], dish[5]))
 
 def init_kitchen_portal():
     rt = Tk()
