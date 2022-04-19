@@ -60,7 +60,7 @@ def update_address(username, new_address):
     cursor.execute('SELECT address from users WHERE username = %s', (username,))
     old_address = cursor.fetchone()[0]
     cursor.execute('UPDATE users SET address = %s WHERE username = %s', (new_address, username))
-    print("Successfully updated phone from " + old_address + " to " + new_address)
+    print("Successfully updated address from " + old_address + " to " + new_address)
     conn.commit()
 
 
@@ -86,19 +86,19 @@ def update_profile(username):
         if choice == 1:
             new_username = input("Enter new username: ")
             update_username(username, new_username)
-        if choice == 2:
+        elif choice == 2:
             new_password = input("Enter new password: ")
             update_password(username, new_password)
-        if choice == 3:
+        elif choice == 3:
             new_phone = input("Enter new phone: ")
             update_phone(username, new_phone)
-        if choice == 4:
+        elif choice == 4:
             new_address = input("Enter new address: ")
             update_address(username, new_address)
-        if choice == 5:
+        elif choice == 5:
             new_email = input("Enter new email: ")
             update_email(username, new_email)
-        if choice == 6:
+        elif choice == 6:
             print("Exiting..")
             break
         else:
@@ -139,16 +139,82 @@ def receive_order(order_id):
     cursor.execute("update order_data set status = 'received' where order_id = %s", (order_id,))
     conn.commit()
 
+
 def cancel_order(order_id):
     cursor = conn.cursor()
     cursor.execute("update order_data set status = 'cancelled' where order_id = %s", (order_id,))
     conn.commit()
+
 
 def feedback():
     fb = input("Kindly provide your valuable feedback: ")
     cursor = conn.cursor()
     cursor.execute("insert into feedback_data (feedback) values (%s);", (fb,))
     conn.commit()
+
+
+def update_employee_password(employee_id, new_password):
+    cursor = conn.cursor()
+    cursor.execute('SELECT password from employee WHERE employee_id = %s', (employee_id,))
+    old_password = cursor.fetchone()[0]
+    cursor.execute('UPDATE employee SET password = %s WHERE employee_id = %s', (new_password, employee_id))
+    print("Successfully updated password from " + old_password + " to " + new_password)
+    conn.commit()
+
+
+def update_employee_phone(employee_id, new_phone):
+    cursor = conn.cursor()
+    cursor.execute('SELECT phone from employee WHERE employee_id = %s', (employee_id,))
+    old_phone = cursor.fetchone()[0]
+    cursor.execute('UPDATE employee SET phone = %s WHERE employee_id = %s', (new_phone, employee_id))
+    print("Successfully updated phone from " + old_phone + " to " + new_phone)
+    conn.commit()
+
+
+def update_employee_access_type(employee_id, new_role):
+    cursor = conn.cursor()
+    cursor.execute('SELECT access_type from employee WHERE employee_id = %s', (employee_id,))
+    old_role = cursor.fetchone()[0]
+    cursor.execute('UPDATE users SET access_type = %s WHERE username = %s', (new_role, employee_id))
+    print("Successfully updated role from " + old_role + " to " + new_role)
+    conn.commit()
+
+
+def update_employee_email(employee_id, new_email):
+    cursor = conn.cursor()
+    cursor.execute('SELECT email from employee WHERE employee_id = %s', (employee_id,))
+    old_email = cursor.fetchone()[0]
+    cursor.execute('UPDATE employee SET email = %s WHERE employee_id = %s', (new_email, employee_id))
+    print("Successfully updated email from " + old_email + " to " + new_email)
+    conn.commit()
+
+
+def update_employee_details(employee_id):
+    while True:
+        print("Update Options:")
+        print("1.Password")
+        print("2.Phone")
+        print("3.Access Type")
+        print("4.Email")
+        print("5.Exit")
+        choice = int(input("Enter your choice:"))
+        if choice == 1:
+            new_password = input("Enter new password: ")
+            update_employee_password(employee_id, new_password)
+        elif choice == 2:
+            new_phone = input("Enter new phone: ")
+            update_employee_phone(employee_id, new_phone)
+        elif choice == 3:
+            new_access = input("Enter new role/access: ")
+            update_employee_access_type(employee_id, new_access)
+        elif choice == 4:
+            new_email = input("Enter new email: ")
+            update_employee_email(employee_id, new_email)
+        elif choice == 5:
+            print("Exiting..")
+            break
+        else:
+            print("Wrong Choice")
 
 
 if __name__ == '__main__':
