@@ -217,9 +217,20 @@ def update_employee_details(employee_id):
             print("Wrong Choice")
 
 
+def view_revenue():
+    cursor = conn.cursor()
+    cursor.execute('SELECT amount from order_data')
+    amount = cursor.fetchall()
+    revenue = 0
+    for i in amount:
+        revenue += int(i[0])
+    print(revenue)
+    conn.commit()
+
+
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
     # log_res = login("cust1", "cust1_pass")
     # update_username("cust1", "new_cust1")
-    feedback()
+    view_revenue()
     # print(log_res)
