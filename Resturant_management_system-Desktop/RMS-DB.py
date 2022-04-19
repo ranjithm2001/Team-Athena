@@ -237,6 +237,17 @@ def display_bill_amount(order_id):
     print("Total bill: " + str(bill))
     conn.commit()
 
+def create_account(username, password, name, phone, address, email):
+    cursor = conn.cursor()
+    cursor.execute('SELECT count(*) from users where username = %s', (username,))
+    count = cursor.fetchone()[0]
+    if not count:
+        cursor.execute("insert into users values(%s, %s, %s', %s, %s, %s)",
+                       (username, password, name, phone, address, email))
+        print("Account created successfully")
+    else:
+        print("Cannot create account as provided username already exists.")
+    
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
     # log_res = login("cust1", "cust1_pass")
