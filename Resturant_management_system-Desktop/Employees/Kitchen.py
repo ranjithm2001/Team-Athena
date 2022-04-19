@@ -9,7 +9,6 @@ con = sqlite3.connect('database.db', check_same_thread=False)
 # for i in orders:
 #     print(i[0], i[1], i[2], i[3])
 
-
 class Chef:
     def __init__(self, root):
         self.root = root
@@ -51,13 +50,10 @@ class Chef:
         self.order_table.heading("2", text="Items")
         self.order_table.heading("3", text="Table number")
         self.order_table.heading("4", text="Mode")
-
         self.order_table.place(x=0, y=0, width=1555, height=500)
-
         self.refresh_order_list()
         # x = threading.Timer(1, self.refresh_order_list).start()
         # self.root.after(1000, self.refresh_order_list())
-
 
     def refresh_order_list(self):
         orders = con.execute('SELECT * from order_data where status="recieved"')

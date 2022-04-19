@@ -12,8 +12,23 @@ class Receptionist:
         win_dims = str(screen_width) + "x" + str(screen_height)
         self.root.geometry(win_dims)
 
+        navigation_frame = Frame(self.root, bd=4, relief=RIDGE, bg="light blue")
+        navigation_frame.place(x=5, y=80, width=400, height=930)
+        content_frame = Frame(self.root, bg="green")
+        content_frame.place(x=410, y=80, width=1500, height=930)
+        self.update_user = Frame(content_frame, bg='green')
+        self.view_revenue = Frame(content_frame, bg='yellow')
+
         logout_btn = Button(self.root, command=self.logout, text="Logout", fg="white",
                             font=("Calibri", 15, "bold"), bg="black").place(x=1800, y=30)
+
+        update_user = Button(navigation_frame, command=self.__update_user_details, text="Update Details", fg="white",
+                             font=("Calibri", 15, "bold"), bg="black").place(x=0, y=600, width=390, height=250)
+    def __update_user_details(self):
+        #self.view_revenue.destroy()
+        self.update_user.place(x=300, y=80, width=1425, height=884)
+        L1 = Label(self.update_user,text= "Update Details",font=('calibri',20,'bold'),bg='black',fg='blue')
+        L1.pack(side="top",fill=X)
 
     def logout(self):
         self.root.destroy()
