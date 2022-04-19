@@ -119,8 +119,18 @@ def assign_table(table_no):
     conn.commit()
 
 
+def view_transactions():
+    cursor = conn.cursor()
+    cursor.execute("select order_id, amount from order_data where status = 'delivered'")
+    transactions = cursor.fetchall()
+    conn.commit()
+    for i in transactions:
+        print("Order Id: " + str(i[0]) + ", Amount: " + i[1])
+
+
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
-    log_res = login("cust1", "cust1_pass")
-    update_username("cust1", "new_cust1")
+    # log_res = login("cust1", "cust1_pass")
+    # update_username("cust1", "new_cust1")
+    view_transactions()
     # print(log_res)
