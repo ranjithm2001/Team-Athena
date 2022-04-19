@@ -128,9 +128,15 @@ def view_transactions():
         print("Order Id: " + str(i[0]) + ", Amount: " + i[1])
 
 
+def deliver_order(order_id):
+    cursor = conn.cursor()
+    cursor.execute("update order_data set status = 'received' where order_id = %s", (order_id,))
+    conn.commit()
+
+
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
     # log_res = login("cust1", "cust1_pass")
     # update_username("cust1", "new_cust1")
-    view_transactions()
+    deliver_order(1)
     # print(log_res)
