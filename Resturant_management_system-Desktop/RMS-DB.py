@@ -139,6 +139,10 @@ def receive_order(order_id):
     cursor.execute("update order_data set status = 'received' where order_id = %s", (order_id,))
     conn.commit()
 
+def cancel_order(order_id):
+    cursor = conn.cursor()
+    cursor.execute("update order_data set status = 'cancelled' where order_id = %s", (order_id,))
+    conn.commit()
 
 def feedback():
     fb = input("Kindly provide your valuable feedback: ")
