@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk, messagebox
 import Login_window
 import sqlite3
-con = sqlite3.connect('database.db', check_same_thread=False)
+con = sqlite3.connect('../database.db', check_same_thread=False)
 
 class Chef:
     def __init__(self, root):
