@@ -12,12 +12,12 @@ def login(username, password):
     if not count:
         print("Username does not exist")
         return 0
-    cursor.execute('SELECT password, role, name from users where username = %s', (username,))
-    (db_password, role, name) = cursor.fetchone()
+    cursor.execute('SELECT password, name from users where username = %s', (username,))
+    (db_password, name) = cursor.fetchone()
     conn.commit()
 
     if password == db_password:
-        print("Log In Successful\nWelcome " + role + " " + name)
+        print("Log In Successful\nWelcome" + " " + name)
         return 1
     else:
         print("Log In Failed. Please Try Again")
@@ -104,11 +104,23 @@ def update_profile(username):
         else:
             print("Wrong Choice")
 
-# def
+
+def assign_table(table_no):
+    cursor = conn.cursor()
+    cursor.execute('SELECT availability from restaurant_table WHERE table_no = %s', (table_no,))
+    available = int(cursor.fetchone()[0])
+
+    if available == 1:
+        print("This table is available")
+        print("Booking the selected table.. please wait")
+        cursor.execute('UPDATE restaurant_table SET availability = 0 WHERE table_no = %s', (table_no,))
+    else:
+        print("Sorry, table is already booked. Please select another table")
+    conn.commit()
+
 
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
     log_res = login("cust1", "cust1_pass")
     update_username("cust1", "new_cust1")
     # print(log_res)
-
