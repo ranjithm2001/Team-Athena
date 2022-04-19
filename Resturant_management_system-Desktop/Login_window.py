@@ -11,7 +11,6 @@ con = sqlite3.connect('database.db')
 # cur.execute('SELECT * FROM employee_data')
 # print(cur.fetchall()[0][0])
 
-
 class Login:
     def __init__(self, root):
         self.root = root
