@@ -26,7 +26,7 @@ def login(username, password):
 
 def update_username(old_username, new_username):
     cursor = conn.cursor()
-    cursor.execute('SELECT count(*) from users WHERE username = %s', (old_username,))
+    cursor.execute('SELECT count(*) from users WHERE username = %s', (new_username,))
     count = cursor.fetchone()[0]
     if not count:
         cursor.execute('UPDATE users SET username = %s WHERE username = %s', (new_username, old_username))
@@ -86,6 +86,7 @@ def update_profile(username):
         if choice == 1:
             new_username = input("Enter new username: ")
             update_username(username, new_username)
+            username = new_username
         elif choice == 2:
             new_password = input("Enter new password: ")
             update_password(username, new_password)
@@ -175,7 +176,7 @@ def update_employee_access_type(employee_id, new_role):
     cursor = conn.cursor()
     cursor.execute('SELECT access_type from employee WHERE employee_id = %s', (employee_id,))
     old_role = cursor.fetchone()[0]
-    cursor.execute('UPDATE users SET access_type = %s WHERE username = %s', (new_role, employee_id))
+    cursor.execute('UPDATE employee SET access_type = %s WHERE employee_id = %s', (new_role, employee_id))
     print("Successfully updated role from " + old_role + " to " + new_role)
     conn.commit()
 
@@ -244,7 +245,7 @@ def create_account(username, password, name, phone, address, email):
     cursor.execute('SELECT count(*) from users where username = %s', (username,))
     count = cursor.fetchone()[0]
     if not count:
-        cursor.execute("insert into users values(%s, %s, %s', %s, %s, %s)",
+        cursor.execute("insert into users values(%s, %s, %s, %s, %s, %s)",
                        (username, password, name, phone, address, email))
         print("Account created successfully")
     else:
@@ -254,7 +255,7 @@ def create_account(username, password, name, phone, address, email):
 
 def order_food(items, table_no, mode, status, amount):
     cursor = conn.cursor()
-    cursor.execute("insert into order_data values(%s, %s, %s', %s, %s, %s)",
+    cursor.execute("insert into order_data (items, table_no, mode, status, amount) values (%s, %s, %s, %s, %s)",
                    (items, table_no, mode, status, amount))
     conn.commit()
     print("Ordered successfully")
@@ -262,7 +263,3 @@ def order_food(items, table_no, mode, status, amount):
 
 if __name__ == '__main__':
     conn = connect("RMS-DB", "postgres", "password5647", "localhost")
-    # log_res = login("cust1", "cust1_pass")
-    # update_username("cust1", "new_cust1")
-    display_bill_amount(1)
-    # print(log_res)
