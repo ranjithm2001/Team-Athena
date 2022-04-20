@@ -27,7 +27,7 @@ class Login:
         self.user_txt.place(x=190, y=160)
 
         password_label = Label(login_form, text="Password", font=("Calibri", 15, "bold"), bg="white").place(x=40, y=220)
-        self.password_text = Entry(login_form, font=("Calibri", 15))
+        self.password_text = Entry(login_form, font=("Calibri", 15),show="*")
         self.password_text.place(x=190, y=220)
 
         login_btn = Button(login_form, command=self.validate_login, text="Login", fg="white", font=("Calibri", 15, "bold"), bg="black").place(x=200, y=300)
