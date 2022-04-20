@@ -3,13 +3,9 @@ from tkinter import ttk, messagebox
 from Employees import Manager, Reception, Kitchen
 import cv2
 from PIL import ImageTk, Image
-import threading
 import sqlite3
 con = sqlite3.connect('database.db')
 
-# cur = con.cursor()
-# cur.execute('SELECT * FROM employee_data')
-# print(cur.fetchall()[0][0])
 
 class Login:
     def __init__(self, root):
@@ -24,7 +20,7 @@ class Login:
         web_cam_display = Label(self.root)
         web_cam_display.place(x=700, y=150, height=400, width=400)
 
-        title = Label(login_form, text="Scan Qr code or Login", font=("Calibri", 25, "bold"), bg="white").place(x=40, y=30)
+        title = Label(login_form, text="Login", font=("Calibri", 25, "bold"), bg="white").place(x=40, y=30)
 
         user_label = Label(login_form, text="Employee ID", font=("Calibri", 15, "bold"), bg="white").place(x=40, y=160)
         self.user_txt = Entry(login_form, font=("Calibri", 15))

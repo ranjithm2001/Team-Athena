@@ -56,7 +56,7 @@ class Chef:
         self.order_no = Entry(self.orders_frame, font=("Calibri", 15))
         self.order_no.place(x=200, y=600)
 
-        order_delivered_btn = Button(self.orders_frame, command=self.order_delivered(13), text="Remove Dish from Menu", fg="white",
+        order_delivered_btn = Button(self.orders_frame, command=self.order_delivered, text="Processed Order", fg="white",
                          font=("Calibri", 15, "bold"), bg="black").place(x=500, y=600)
 
         # menu items frame
@@ -99,8 +99,64 @@ class Chef:
         self.new_dishes_table.place(x=0, y=40, width=1555, height=500)
         self.populate_new_menu()
 
-    def order_delivered(self, order_number):
-        pass
+        item_label = Label(self.new_dish_frame, text="Name", font=("Calibri", 15, "bold"), bg="gray").place(x=50, y=600)
+        self.dish_name = Entry(self.new_dish_frame, font=("Calibri", 15))
+        self.dish_name.place(x=250, y=600)
+
+        item_label = Label(self.new_dish_frame, text="Type", font=("Calibri", 15, "bold"), bg="gray").place(x=50, y=650)
+        self.dish_type = Entry(self.new_dish_frame, font=("Calibri", 15))
+        self.dish_type.place(x=250, y=650)
+
+        item_label = Label(self.new_dish_frame, text="Description", font=("Calibri", 15, "bold"), bg="gray").place(x=50, y=700)
+        self.dish_description = Entry(self.new_dish_frame, font=("Calibri", 15))
+        self.dish_description.place(x=250, y=700)
+
+        item_label = Label(self.new_dish_frame, text="Ingredients", font=("Calibri", 15, "bold"), bg="gray").place(x=50, y=750)
+        self.dish_ingredients = Entry(self.new_dish_frame, font=("Calibri", 15))
+        self.dish_ingredients.place(x=250, y=750)
+
+        item_label = Label(self.new_dish_frame, text="Price", font=("Calibri", 15, "bold"), bg="gray").place(x=50, y=800)
+        self.dish_price = Entry(self.new_dish_frame, font=("Calibri", 15))
+        self.dish_price.place(x=250, y=800)
+
+        add_btn = Button(self.new_dish_frame, command=self.add_dish_to_db, text="Add Dish", fg="white",
+                         font=("Calibri", 15, "bold"), bg="black").place(x=550, y=700)
+
+        item_label = Label(self.new_dish_frame, text="Dish No. to be Deleted", font=("Calibri", 15, "bold"), bg="gray").place(x=750, y=600)
+        self.dish_tobe_removed = Entry(self.new_dish_frame, font=("Calibri", 15))
+        self.dish_tobe_removed.place(x=1000, y=600)
+        add_btn = Button(self.new_dish_frame, command=self.remove_dish_from_db, text="Remove Dish", fg="white",
+                         font=("Calibri", 15, "bold"), bg="black").place(x=1300, y=600)
+
+    def order_delivered(self):
+        order_number = self.order_no.get()
+        con.execute('UPDATE order_data SET status=? WHERE orderID=?', ("delivered", order_number))
+        con.commit()
+
+    def add_dish_to_db(self):
+        dish_name = str(self.dish_name.get())
+        dish_type = str(self.dish_type.get())
+        dish_description = str(self.dish_description.get())
+        dish_ingredients = str(self.dish_ingredients.get())
+        dish_price = float(self.dish_price.get())
+        dish_num = 0
+        all_dish_nos = []
+        dish_nos = con.execute('SELECT Dish_No from dishes')
+        for i in dish_nos:
+            all_dish_nos.append(i[0])
+        for i in range(1, max(all_dish_nos)+2):
+            if i not in all_dish_nos:
+                dish_num = i
+                break
+        con.execute('INSERT INTO dishes VALUES(?,?,?,?,?,?)', (dish_name, dish_type, dish_description, dish_ingredients, dish_num, dish_price))
+        con.commit()
+        self.populate_new_menu()
+
+    def remove_dish_from_db(self):
+        dish_no = int(self.dish_tobe_removed.get())
+        con.execute('DELETE FROM dishes where Dish_No=?', (dish_no,))
+        con.commit()
+        self.populate_new_menu()
 
     def populate_menu(self):
         for item in self.menu_table.get_children():
@@ -110,6 +166,8 @@ class Chef:
             self.menu_table.insert("", 'end', iid=item[1], text=item[1], values=(item[1], item[0]))
 
     def populate_new_menu(self):
+        for item in self.new_dishes_table.get_children():
+            self.new_dishes_table.delete(item)
         dishes = con.execute('SELECT * FROM dishes ORDER BY Dish_No')
         for dish in dishes:
             self.new_dishes_table.insert("", 'end', iid=dish[4], text=dish[4], values=(dish[4], dish[0], dish[1], dish[2], dish[5]))
@@ -133,13 +191,14 @@ class Chef:
         for item in self.order_table.get_children():
             self.order_table.delete(item)
         for i in orders:
-            self.order_table.insert("", 'end', iid=i[0], text=i[0], values=(i[0], i[1], i[2], i[3]))
+            self.order_table.insert("", 'end', iid=i[5], text=i[5], values=(i[5], i[0], i[1], i[2]))
         self.refresh_order_thread = threading.Timer(1, self.refresh_order_list)
         self.refresh_order_thread.start()
 
     def raise_menu(self):
         self.orders_frame.place_forget()
         self.new_dish_frame.place_forget()
+        self.populate_dishes_list()
         self.menu_frame.place(x=0, y=0, width=1555, height=930)
 
     def raise_orders(self):
@@ -169,6 +228,8 @@ class Chef:
 
     def populate_dishes_list(self):
         dishes = con.execute('SELECT * FROM dishes ORDER BY Dish_No')
+        for item in self.dishes_table.get_children():
+            self.dishes_table.delete(item)
         for dish in dishes:
             self.dishes_table.insert("", 'end', iid=dish[4], text=dish[4], values=(dish[4], dish[0], dish[5]))
 
