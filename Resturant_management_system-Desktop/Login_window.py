@@ -3,7 +3,8 @@ from tkinter import ttk, messagebox
 from Employees import Manager, Reception, Kitchen
 import cv2
 from PIL import ImageTk, Image
-import threading
+import sqlite3
+con = sqlite3.connect('database.db')
 
 
 class Login:
@@ -19,18 +20,18 @@ class Login:
         web_cam_display = Label(self.root)
         web_cam_display.place(x=700, y=150, height=400, width=400)
 
-        title = Label(login_form, text="Scan Qr code or Login", font=("Calibri", 25, "bold"), bg="white").place(x=70, y=30)
+        title = Label(login_form, text="Login", font=("Calibri", 25, "bold"), bg="white").place(x=40, y=30)
 
         user_label = Label(login_form, text="Employee ID", font=("Calibri", 15, "bold"), bg="white").place(x=40, y=160)
         self.user_txt = Entry(login_form, font=("Calibri", 15))
         self.user_txt.place(x=190, y=160)
 
         password_label = Label(login_form, text="Password", font=("Calibri", 15, "bold"), bg="white").place(x=40, y=220)
-        self.password_text = Entry(login_form, font=("Calibri", 15))
+        self.password_text = Entry(login_form, font=("Calibri", 15),show="*")
         self.password_text.place(x=190, y=220)
 
         login_btn = Button(login_form, command=self.validate_login, text="Login", fg="white", font=("Calibri", 15, "bold"), bg="black").place(x=200, y=300)
-        # threading.Timer(0.5, self.scan_qr).start()
+        #threading.Timer(0.5, self.scan_qr).start()
 
     def scan_qr(self):
         cap = cv2.VideoCapture(0)
@@ -59,12 +60,10 @@ class Login:
             self.root.destroy()
             Reception.init_receptionist_portal()
 
-
 def init_login():
     rt = Tk()
     obj = Login(rt)
     rt.mainloop()
-
 
 if __name__ == "__main__":
     init_login()
